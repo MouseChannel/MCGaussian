@@ -27,23 +27,23 @@ message(STATUS ${SRC})
 target_include_directories(src PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 
-include_directories(${PROJECT_SOURCE_DIR}/origin_cuda)
-file(GLOB_RECURSE ORIGIN_CUDA ${PROJECT_SOURCE_DIR}/origin_cuda/*.cpp ${PROJECT_SOURCE_DIR}/origin_cuda/*.cu)
-add_library(origin_cuda ${ORIGIN_CUDA})
+# include_directories(${PROJECT_SOURCE_DIR}/origin_cuda)
+# file(GLOB_RECURSE ORIGIN_CUDA ${PROJECT_SOURCE_DIR}/origin_cuda/*.cpp ${PROJECT_SOURCE_DIR}/origin_cuda/*.cu)
+# add_library(origin_cuda ${ORIGIN_CUDA})
 
  
 
 
 
-file(GLOB_RECURSE TESTSRC ${PROJECT_SOURCE_DIR}/src/ply_loader.cpp)
-add_library(testsrc ${TESTSRC})
-set(Torch_DIR "/home/mocheng/software/libtorch-cxx11-abi-shared-with-deps-2.0.1+cu118/libtorch/share/cmake/Torch")
-find_package(Torch REQUIRED)
-target_include_directories(testsrc PUBLIC ${TORCH_INCLUDE_DIRS})
-add_executable(ORIGIN_TEST main.cpp)
-target_link_libraries(ORIGIN_TEST src origin_cuda torch_cuda  )
-target_include_directories(ORIGIN_TEST PUBLIC ${PROJECT_SOURCE_DIR}/include)
-target_include_directories(ORIGIN_TEST PUBLIC ${TORCH_INCLUDE_DIRS})
+# file(GLOB_RECURSE TESTSRC ${PROJECT_SOURCE_DIR}/src/ply_loader.cpp)
+# add_library(testsrc ${TESTSRC})
+# set(Torch_DIR "/home/mocheng/software/libtorch-cxx11-abi-shared-with-deps-2.0.1+cu118/libtorch/share/cmake/Torch")
+# find_package(Torch REQUIRED)
+# target_include_directories(testsrc PUBLIC ${TORCH_INCLUDE_DIRS})
+# add_executable(ORIGIN_TEST main.cpp)
+# target_link_libraries(ORIGIN_TEST src origin_cuda torch_cuda  )
+# target_include_directories(ORIGIN_TEST PUBLIC ${PROJECT_SOURCE_DIR}/include)
+# target_include_directories(ORIGIN_TEST PUBLIC ${TORCH_INCLUDE_DIRS})
 
 
 # link MCRT
